@@ -1,11 +1,12 @@
 # Evaluación de Portafolio Bootcamp Fullstack Python - Módulo 6
+
 ## Hans Schiess
+
 ### Sistema de Gestión de Productos - Django
 
 ![Django](https://img.shields.io/badge/Django-5.2.7-green.svg)
 ![Python](https://img.shields.io/badge/Python-3.12.2-blue.svg)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.2-purple.svg)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 Sistema web completo de gestión de productos desarrollado con Django 5.2.7, implementando las mejores prácticas de desarrollo web empresarial.
 
@@ -37,6 +38,7 @@ Este proyecto es una aplicación web empresarial desarrollada como parte del por
 ### 🎯 Objetivo
 
 Demostrar el dominio de Django como framework web de alto nivel, implementando:
+
 - Sistema de autenticación y autorización
 - Gestión de base de datos con ORM
 - Templates dinámicos con Bootstrap
@@ -53,6 +55,7 @@ Django es un framework web de alto nivel escrito en Python que fomenta el desarr
 ### Ventajas de Django para Aplicaciones Empresariales
 
 #### 1. **Desarrollo Rápido**
+
 - Sistema de plantillas eficiente
 - ORM integrado que elimina la necesidad de escribir SQL
 - Panel de administración automático
@@ -60,6 +63,7 @@ Django es un framework web de alto nivel escrito en Python que fomenta el desarr
 - **Tiempo de desarrollo:** Hasta 40% más rápido que frameworks tradicionales
 
 #### 2. **Seguridad Incorporada**
+
 - ✅ Protección contra **SQL Injection**
 - ✅ Protección contra **Cross-Site Scripting (XSS)**
 - ✅ Protección contra **Cross-Site Request Forgery (CSRF)**
@@ -68,6 +72,7 @@ Django es un framework web de alto nivel escrito en Python que fomenta el desarr
 - ✅ Hasheo seguro de contraseñas (PBKDF2, bcrypt, Argon2)
 
 #### 3. **Escalabilidad**
+
 - Arquitectura modular (apps reutilizables)
 - Soporte para múltiples bases de datos
 - Sistema de caché integrado
@@ -75,18 +80,21 @@ Django es un framework web de alto nivel escrito en Python que fomenta el desarr
 - Manejo eficiente de archivos estáticos
 
 #### 4. **ORM Potente**
+
 - Mapeo objeto-relacional intuitivo
 - Consultas complejas sin SQL
 - Migraciones automáticas
 - Soporte para múltiples bases de datos
 
 #### 5. **Ecosistema Rico**
+
 - Más de 4,000 paquetes en PyPI
 - Comunidad activa y grande
 - Documentación exhaustiva
 - Django REST Framework para APIs
 
 #### 6. **Administración Automática**
+
 - Panel de administración listo para usar
 - Altamente personalizable
 - Gestión de usuarios y permisos
@@ -98,29 +106,30 @@ Django es un framework web de alto nivel escrito en Python que fomenta el desarr
 
 ### Django vs Flask vs FastAPI
 
-| Característica | Django | Flask | FastAPI |
-|----------------|--------|-------|---------|
-| **Tipo** | Full-stack Framework | Microframework | API Framework |
-| **Filosofía** | "Batteries included" | Minimalista | Moderno y rápido |
-| **Curva de Aprendizaje** | Media-Alta | Baja | Media |
-| **ORM Incluido** | ✅ Django ORM | ❌ Requiere SQLAlchemy | ❌ Compatible con varios |
-| **Admin Panel** | ✅ Automático | ❌ Requiere Flask-Admin | ❌ No incluido |
-| **Sistema de Templates** | ✅ Django Templates | ✅ Jinja2 | ❌ Frontend separado |
-| **Autenticación** | ✅ Integrada | ⚠️ Requiere extensiones | ⚠️ JWT manual |
-| **Formularios** | ✅ Django Forms | ⚠️ WTForms | ❌ Frontend |
-| **Validación** | ✅ Integrada | ⚠️ Manual | ✅ Pydantic |
-| **Seguridad** | ✅ CSRF, XSS, SQL Injection | ⚠️ Configuración manual | ⚠️ Configuración manual |
-| **Async Support** | ✅ Desde 3.1 | ✅ Nativo | ✅ Nativo |
-| **Rendimiento** | Bueno | Muy Bueno | Excelente |
-| **Tamaño Proyecto** | Grande/Mediano | Pequeño/Mediano | APIs/Microservicios |
-| **Migración BD** | ✅ Automática | ❌ Alembic manual | ❌ Alembic/Manual |
-| **Documentación** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| **Comunidad** | Muy Grande | Grande | Creciente |
-| **Casos de Uso** | Aplicaciones empresariales completas, CMS, e-commerce | Proyectos pequeños, APIs simples, prototipos | APIs REST modernas, microservicios, aplicaciones ML |
+| Característica                | Django                                                | Flask                                         | FastAPI                                             |
+| ------------------------------ | ----------------------------------------------------- | --------------------------------------------- | --------------------------------------------------- |
+| **Tipo**                 | Full-stack Framework                                  | Microframework                                | API Framework                                       |
+| **Filosofía**           | "Batteries included"                                  | Minimalista                                   | Moderno y rápido                                   |
+| **Curva de Aprendizaje** | Media-Alta                                            | Baja                                          | Media                                               |
+| **ORM Incluido**         | ✅ Django ORM                                         | ❌ Requiere SQLAlchemy                        | ❌ Compatible con varios                            |
+| **Admin Panel**          | ✅ Automático                                        | ❌ Requiere Flask-Admin                       | ❌ No incluido                                      |
+| **Sistema de Templates** | ✅ Django Templates                                   | ✅ Jinja2                                     | ❌ Frontend separado                                |
+| **Autenticación**       | ✅ Integrada                                          | ⚠️ Requiere extensiones                     | ⚠️ JWT manual                                     |
+| **Formularios**          | ✅ Django Forms                                       | ⚠️ WTForms                                  | ❌ Frontend                                         |
+| **Validación**          | ✅ Integrada                                          | ⚠️ Manual                                   | ✅ Pydantic                                         |
+| **Seguridad**            | ✅ CSRF, XSS, SQL Injection                           | ⚠️ Configuración manual                    | ⚠️ Configuración manual                          |
+| **Async Support**        | ✅ Desde 3.1                                          | ✅ Nativo                                     | ✅ Nativo                                           |
+| **Rendimiento**          | Bueno                                                 | Muy Bueno                                     | Excelente                                           |
+| **Tamaño Proyecto**     | Grande/Mediano                                        | Pequeño/Mediano                              | APIs/Microservicios                                 |
+| **Migración BD**        | ✅ Automática                                        | ❌ Alembic manual                             | ❌ Alembic/Manual                                   |
+| **Documentación**       | ⭐⭐⭐⭐⭐                                            | ⭐⭐⭐⭐                                      | ⭐⭐⭐⭐⭐                                          |
+| **Comunidad**            | Muy Grande                                            | Grande                                        | Creciente                                           |
+| **Casos de Uso**         | Aplicaciones empresariales completas, CMS, e-commerce | Proyectos pequeños, APIs simples, prototipos | APIs REST modernas, microservicios, aplicaciones ML |
 
 ### 🏆 ¿Cuándo usar cada uno?
 
 #### Usa **Django** cuando:
+
 - ✅ Necesitas una aplicación web completa (frontend + backend)
 - ✅ Requieres panel de administración
 - ✅ Trabajas con bases de datos relacionales complejas
@@ -131,6 +140,7 @@ Django es un framework web de alto nivel escrito en Python que fomenta el desarr
 **Ejemplos:** Instagram, Pinterest, Mozilla, The Washington Post, National Geographic
 
 #### Usa **Flask** cuando:
+
 - ✅ Necesitas máxima flexibilidad
 - ✅ Proyecto pequeño o prototipo rápido
 - ✅ API simple sin muchas funcionalidades
@@ -140,6 +150,7 @@ Django es un framework web de alto nivel escrito en Python que fomenta el desarr
 **Ejemplos:** LinkedIn (partes), Netflix (herramientas internas), Reddit (inicialmente)
 
 #### Usa **FastAPI** cuando:
+
 - ✅ Construyes APIs REST modernas
 - ✅ Necesitas alto rendimiento
 - ✅ Trabajas con tipos de datos (type hints)
@@ -183,12 +194,14 @@ Django es un framework web de alto nivel escrito en Python que fomenta el desarr
 ## 🛠️ Tecnologías Utilizadas
 
 ### Backend
+
 - **Python** 3.12.2
 - **Django** 5.2.7
 - **SQLite3** (Base de datos)
 - **Pillow** 12.0.0 (Procesamiento de imágenes)
 
 ### Frontend
+
 - **Bootstrap** 5.3.2
 - **Bootstrap Icons** 1.11.3
 - **HTML5**
@@ -196,6 +209,7 @@ Django es un framework web de alto nivel escrito en Python que fomenta el desarr
 - **JavaScript** (Bootstrap Bundle)
 
 ### Herramientas de Desarrollo
+
 - **Git** & **GitHub** (Control de versiones)
 - **VS Code** (Editor)
 - **Python 3.12.2 Virtual Environment**
@@ -230,12 +244,14 @@ python --version
 ### 3. Crear entorno virtual
 
 **Windows:**
+
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
 **Linux/Mac:**
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
@@ -248,6 +264,7 @@ pip install -r requirements.txt
 ```
 
 **Contenido de requirements.txt:**
+
 ```
 asgiref==3.8.1
 Django==5.2.7
@@ -287,6 +304,7 @@ python manage.py createsuperuser
 ```
 
 Ingresa los datos solicitados:
+
 - Username
 - Email
 - Password
@@ -353,6 +371,7 @@ Accede a: **http://127.0.0.1:8000/**
 ### Funcionalidades por Rol
 
 #### 👤 Usuario Anónimo
+
 - ✅ Ver listado de productos
 - ✅ Ver detalles de productos
 - ✅ Buscar y filtrar productos
@@ -360,6 +379,7 @@ Accede a: **http://127.0.0.1:8000/**
 - ✅ Iniciar sesión
 
 #### 🔐 Usuario Autenticado
+
 - ✅ Todo lo anterior, más:
 - ✅ Crear productos
 - ✅ Editar productos
@@ -369,6 +389,7 @@ Accede a: **http://127.0.0.1:8000/**
 - ✅ Cerrar sesión
 
 #### 👨‍💼 Administrador (Staff)
+
 - ✅ Todo lo anterior, más:
 - ✅ Acceso al panel de administración
 - ✅ Gestión completa de usuarios
@@ -466,6 +487,7 @@ Evaluacion_portafolio_6/
 ### 🔐 Sistema de Autenticación
 
 #### Registro de Usuarios
+
 - Formulario personalizado con Bootstrap
 - Validación de campos (username, email, password)
 - Confirmación de contraseña
@@ -473,6 +495,7 @@ Evaluacion_portafolio_6/
 - Redirección automática después del registro
 
 #### Inicio de Sesión
+
 - Formulario de login personalizado
 - Validación de credenciales
 - Mensajes de error informativos
@@ -480,6 +503,7 @@ Evaluacion_portafolio_6/
 - Redirección a página anterior
 
 #### Gestión de Perfil
+
 - Visualización de información del usuario
 - Edición de datos personales
 - Cambio de contraseña
@@ -488,12 +512,14 @@ Evaluacion_portafolio_6/
 ### 📦 Gestión de Productos
 
 #### CRUD Completo
+
 - **Crear:** Formulario con validación, subida de imágenes
 - **Leer:** Listado paginado, detalle de producto
 - **Actualizar:** Edición de datos existentes
 - **Eliminar:** Confirmación antes de borrar
 
 #### Características Avanzadas
+
 - 🔍 Búsqueda por nombre y descripción
 - 🏷️ Filtrado por categoría
 - 📄 Paginación (9 productos por página)
@@ -533,6 +559,7 @@ Requiere: Usuario con permisos de staff/superusuario
 ### Funcionalidades
 
 #### Gestión de Productos
+
 - Vista de lista personalizada
 - Filtros por categoría, estado y fecha
 - Búsqueda por nombre y descripción
@@ -542,12 +569,14 @@ Requiere: Usuario con permisos de staff/superusuario
 - Paginación de 20 elementos
 
 #### Gestión de Categorías
+
 - Lista ordenada alfabéticamente
 - Búsqueda por nombre
 - Contador de productos asociados
 - Historial de cambios
 
 #### Gestión de Usuarios
+
 - CRUD completo de usuarios
 - Asignación de permisos
 - Grupos de usuarios
@@ -559,57 +588,51 @@ Requiere: Usuario con permisos de staff/superusuario
 ## ✅ Requerimientos Cumplidos
 
 ### 1. ✅ Descripción de características de Django
-- [x] Investigación sobre Django
-- [x] Ventajas para desarrollo empresarial
-- [x] Comparación con Flask y FastAPI
-- [x] Documentación en README.md
+
+- [X] Investigación sobre Django
+- [X] Ventajas para desarrollo empresarial
+- [X] Comparación con Flask y FastAPI
+- [X] Documentación en README.md
 
 ### 2. ✅ Configuración de proyecto Django
-- [x] Uso de `django-admin startproject`
-- [x] Uso de `django-admin startapp`
-- [x] Estructura modular con 3 aplicaciones
-- [x] Configuración en `settings.py`
+
+- [X] Uso de `django-admin startproject`
+- [X] Uso de `django-admin startapp`
+- [X] Estructura modular con 3 aplicaciones
+- [X] Configuración en `settings.py`
 
 ### 3. ✅ Templates dinámicos
-- [x] Sistema de plantillas Django
-- [x] Template base con herencia
-- [x] Bootstrap 5 integrado
-- [x] Contenido dinámico desde base de datos
-- [x] Variables de contexto
-- [x] Bucles y condicionales
+
+- [X] Sistema de plantillas Django
+- [X] Template base con herencia
+- [X] Bootstrap 5 integrado
+- [X] Contenido dinámico desde base de datos
+- [X] Variables de contexto
+- [X] Bucles y condicionales
 
 ### 4. ✅ Formularios web
-- [x] Django Forms personalizados
-- [x] Validación de datos
-- [x] Estilos Bootstrap
-- [x] Mensajes de error
-- [x] Almacenamiento en base de datos
+
+- [X] Django Forms personalizados
+- [X] Validación de datos
+- [X] Estilos Bootstrap
+- [X] Mensajes de error
+- [X] Almacenamiento en base de datos
 
 ### 5. ✅ Autenticación y Autorización
-- [x] Sistema de login/logout
-- [x] Registro de usuarios
-- [x] Decorador `@login_required`
-- [x] Control de acceso en templates
-- [x] Redirecciones configuradas
+
+- [X] Sistema de login/logout
+- [X] Registro de usuarios
+- [X] Decorador `@login_required`
+- [X] Control de acceso en templates
+- [X] Redirecciones configuradas
 
 ### 6. ✅ Admin de usuarios y permisos
-- [x] Django Admin habilitado
-- [x] Personalización de admin
-- [x] Gestión de usuarios
-- [x] Sistema de permisos
-- [x] Filtros y búsqueda
 
----
-
-## 🤝 Contribución
-
-Las contribuciones son bienvenidas. Para contribuir:
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+- [X] Django Admin habilitado
+- [X] Personalización de admin
+- [X] Gestión de usuarios
+- [X] Sistema de permisos
+- [X] Filtros y búsqueda
 
 ---
 
@@ -619,16 +642,8 @@ Las contribuciones son bienvenidas. Para contribuir:
 
 - GitHub: [@schiesscl](https://github.com/schiesscl)
 - Proyecto: [Evaluacion_portafolio_6](https://github.com/HansSchiess/Evaluacion_portafolio_6)
-- LinkedIn: [Hans Schiess](https://www.linkedin.com/in/hans-schiess/)
-
----
-
-## 🙏 Agradecimientos
-
-- **Talento Digital** - Por la formación en desarrollo web
-- **Django Software Foundation** - Por el excelente framework
-- **Bootstrap Team** - Por el framework CSS
-- Comunidad de Python y Django
+- LinkedIn: [Hans Schiess
+  ](https://www.linkedin.com/in/hans-schiess/)
 
 ---
 
@@ -652,6 +667,7 @@ https://github.com/HansSchiess/Evaluacion_portafolio_6/issues
 ## 📝 Notas de Versión
 
 ### v1.0.0 (2025-10-26)
+
 - ✅ Lanzamiento inicial
 - ✅ Sistema completo de autenticación
 - ✅ CRUD de productos y categorías
