@@ -3,7 +3,7 @@
 ### Sistema de Gestión de Productos - Django
 
 ![Django](https://img.shields.io/badge/Django-5.2.7-green.svg)
-![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.12.2-blue.svg)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.2-purple.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
@@ -183,7 +183,7 @@ Django es un framework web de alto nivel escrito en Python que fomenta el desarr
 ## 🛠️ Tecnologías Utilizadas
 
 ### Backend
-- **Python** 3.x
+- **Python** 3.12.2
 - **Django** 5.2.7
 - **SQLite3** (Base de datos)
 - **Pillow** 12.0.0 (Procesamiento de imágenes)
@@ -198,13 +198,13 @@ Django es un framework web de alto nivel escrito en Python que fomenta el desarr
 ### Herramientas de Desarrollo
 - **Git** & **GitHub** (Control de versiones)
 - **VS Code** (Editor)
-- **Python Virtual Environment**
+- **Python 3.12.2 Virtual Environment**
 
 ---
 
 ## 📦 Requisitos Previos
 
-- Python 3.8 o superior
+- **Python 3.12.2** (recomendado) o superior
 - pip (gestor de paquetes de Python)
 - Git
 - Navegador web moderno
@@ -220,7 +220,14 @@ git clone https://github.com/HansSchiess/Evaluacion_portafolio_6.git
 cd Evaluacion_portafolio_6
 ```
 
-### 2. Crear entorno virtual
+### 2. Verificar versión de Python
+
+```bash
+python --version
+# Debería mostrar: Python 3.12.2 o superior
+```
+
+### 3. Crear entorno virtual
 
 **Windows:**
 ```bash
@@ -234,7 +241,7 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 3. Instalar dependencias
+### 4. Instalar dependencias
 
 ```bash
 pip install -r requirements.txt
@@ -249,7 +256,7 @@ sqlparse==0.5.3
 tzdata==2025.2
 ```
 
-### 4. Navegar al directorio del proyecto
+### 5. Navegar al directorio del proyecto
 
 ```bash
 cd portafolio_6
@@ -630,7 +637,7 @@ Las contribuciones son bienvenidas. Para contribuir:
 - [Documentación oficial de Django](https://docs.djangoproject.com/)
 - [Django Tutorial](https://www.djangoproject.com/start/)
 - [Bootstrap Documentation](https://getbootstrap.com/docs/)
-- [Python Official Documentation](https://docs.python.org/3/)
+- [Python 3.12 Official Documentation](https://docs.python.org/3.12/)
 - [Comparativa Detallada de Frameworks](FRAMEWORKS_COMPARISON.md)
 
 ---
@@ -652,6 +659,7 @@ https://github.com/HansSchiess/Evaluacion_portafolio_6/issues
 - ✅ Interfaz responsiva con Bootstrap 5
 - ✅ Sistema de búsqueda y filtrado
 - ✅ Gestión de imágenes
+- ✅ Desarrollado con Python 3.12.2
 
 ---
 
@@ -659,4 +667,4 @@ https://github.com/HansSchiess/Evaluacion_portafolio_6/issues
 
 ---
 
-*Desarrollado con ❤️ usando Django y Python por [Hans Schiess](https://github.com/HansSchiess)*
+*Desarrollado con ❤️ usando Django y Python 3.12.2 por [Hans Schiess](https://github.com/HansSchiess)*
