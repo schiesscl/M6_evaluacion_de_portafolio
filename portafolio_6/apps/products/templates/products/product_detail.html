@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ product.name }} - Portafolio Django{% endblock %}
+
+{% block content %}
+<div class="row mb-3">
+    <div class="col-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'core_p6:home' %}">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'products:product_list' %}">Productos</a></li>
+                <li class="breadcrumb-item active">{{ product.name }}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-5 mb-4">
+        <div class="card">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" 
+                     class="card-img-top" 
+                     alt="{{ product.name }}"
+                     style="max-height: 400px; object-fit: contain;">
+            {% else %}
+                <div class="card-img-top bg-light d-flex align-items-center justify-content-center" 
+                     style="height: 400px;">
+                    <i class="bi bi-image text-muted" style="font-size: 8rem;"></i>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <div class="col-lg-7">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">{{ product.name }}</h2>
+                
+                {% if product.category %}
+                    <p class="text-muted">
+                        <i class="bi bi-tag"></i> Categoría: 
+                        <strong>{{ product.category.name }}</strong>
+                    </p>
+                {% endif %}
+                
+                <hr>
+                
+                <h3 class="text-primary mb-3">
+                    ${{ product.price|floatformat:2 }}
+                </h3>
+                
+                <div class="mb-3">
+                    <h5>Stock:</h5>
+                    {% if product.is_in_stock %}
+                        <span class="badge bg-success fs-6">
+                            <i class="bi bi-check-circle"></i> 
+                            {{ product.stock }} unidades disponibles
+                        </span>
+                    {% else %}
+                        <span class="badge bg-danger fs-6">
+                            <i class="bi bi-x-circle"></i> Sin stock
+                        </span>
+                    {% endif %}
+                </div>
+                
+                <hr>
+                
+                <h5>Descripción:</h5>
+                <p class="card-text">{{ product.description }}</p>
+                
+                <hr>
+                
+                <div class="row text-muted small">
+                    <div class="col-md-6">
+                        <i class="bi bi-calendar"></i> Creado: 
+                        {{ product.created_at|date:"d/m/Y" }}
+                    </div>
+                    <div class="col-md-6">
+                        <i class="bi bi-clock"></i> Actualizado: 
+                        {{ product.updated_at|date:"d/m/Y H:i" }}
+                    </div>
+                    {% if product.created_by %}
+                        <div class="col-12 mt-2">
+                            <i class="bi bi-person"></i> Creado por: 
+                            {{ product.created_by.get_full_name|default:product.created_by.username }}
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <hr>
+                
+                <div class="d-grid gap-2 d-md-flex">
+                    <a href="{% url 'products:product_list' %}" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Volver
+                    </a>
+                    
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'products:product_edit' product.pk %}" class="btn btn-warning">
+                            <i class="bi bi-pencil"></i> Editar
+                        </a>
+                        <a href="{% url 'products:product_delete' product.pk %}" class="btn btn-danger">
+                            <i class="bi bi-trash"></i> Eliminar
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Productos Relacionados -->
+{% if related_products %}
+    <div class="row mt-5">
+        <div class="col-12">
+            <h4><i class="bi bi-box-seam"></i> Productos Relacionados</h4>
+            <hr>
+        </div>
+        {% for related in related_products %}
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    {% if related.image %}
+                        <img src="{{ related.image.url }}" 
+                             class="card-img-top" 
+                             alt="{{ related.name }}"
+                             style="height: 150px; object-fit: cover;">
+                    {% else %}
+                        <div class="card-img-top bg-light d-flex align-items-center justify-content-center" 
+                             style="height: 150px;">
+                            <i class="bi bi-image text-muted" style="font-size: 3rem;"></i>
+                        </div>
+                    {% endif %}
+                    <div class="card-body">
+                        <h6 class="card-title">{{ related.name }}</h6>
+                        <p class="text-primary mb-2">
+                            ${{ related.price|floatformat:2 }}
+                        </p>
+                        <a href="{% url 'products:product_detail' related.pk %}" 
+                           class="btn btn-sm btn-outline-primary w-100">
+                            Ver Detalles
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

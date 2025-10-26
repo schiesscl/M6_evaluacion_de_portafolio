@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+{% block title %}Productos - Portafolio Django{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2><i class="bi bi-box-seam"></i> Lista de Productos</h2>
+            {% if user.is_authenticated %}
+                <a href="{% url 'products:product_create' %}" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> Nuevo Producto
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Búsqueda y Filtros -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <form method="get" class="row g-3">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" 
+                                   name="search" 
+                                   class="form-control" 
+                                   placeholder="Buscar productos..." 
+                                   value="{{ search_query }}">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <select name="category" class="form-select">
+                            <option value="">Todas las categorías</option>
+                            {% for category in categories %}
+                                <option value="{{ category.id }}" 
+                                        {% if selected_category == category.id|stringformat:"s" %}selected{% endif %}>
+                                    {{ category.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="bi bi-filter"></i> Filtrar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Lista de Productos -->
+<div class="row">
+    {% if page_obj %}
+        {% for product in page_obj %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" 
+                             class="card-img-top" 
+                             alt="{{ product.name }}"
+                             style="height: 200px; object-fit: cover;">
+                    {% else %}
+                        <div class="card-img-top bg-light d-flex align-items-center justify-content-center" 
+                             style="height: 200px;">
+                            <i class="bi bi-image text-muted" style="font-size: 4rem;"></i>
+                        </div>
+                    {% endif %}
+                    
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        
+                        {% if product.category %}
+                            <p class="text-muted small mb-2">
+                                <i class="bi bi-tag"></i> {{ product.category.name }}
+                            </p>
+                        {% endif %}
+                        
+                        <p class="card-text flex-grow-1">
+                            {{ product.description|truncatewords:20 }}
+                        </p>
+                        
+                        <div class="mb-3">
+                            <h4 class="text-primary mb-2">
+                                ${{ product.price|floatformat:2 }}
+                            </h4>
+                            
+                            {% if product.is_in_stock %}
+                                <span class="badge bg-success">
+                                    <i class="bi bi-check-circle"></i> {{ product.stock_status }}
+                                </span>
+                            {% else %}
+                                <span class="badge bg-danger">
+                                    <i class="bi bi-x-circle"></i> Sin stock
+                                </span>
+                            {% endif %}
+                        </div>
+                        
+                        <a href="{% url 'products:product_detail' product.pk %}" 
+                           class="btn btn-outline-primary w-100">
+                            <i class="bi bi-eye"></i> Ver Detalles
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+                <i class="bi bi-info-circle"></i> No se encontraron productos.
+                {% if user.is_authenticated %}
+                    <a href="{% url 'products:product_create' %}" class="alert-link">
+                        Crear el primero
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+<!-- Paginación -->
+{% if page_obj.has_other_pages %}
+    <nav aria-label="Paginación de productos">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1{% if search_query %}&search={{ search_query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
+                        <i class="bi bi-chevron-double-left"></i>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
+                        <i class="bi bi-chevron-left"></i>
+                    </a>
+                </li>
+            {% endif %}
+            
+            <li class="page-item active">
+                <span class="page-link">
+                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+                </span>
+            </li>
+            
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
+                        <i class="bi bi-chevron-right"></i>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if search_query %}&search={{ search_query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
+                        <i class="bi bi-chevron-double-right"></i>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endif %}
+{% endblock %}
