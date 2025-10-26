@@ -1,4 +1,6 @@
-# 🚀 Sistema de Gestión de Productos - Django
+# Evaluación de Portafolio Bootcamp Fullstack Python - Módulo 6
+## Hans Schiess
+### Sistema de Gestión de Productos - Django
 
 ![Django](https://img.shields.io/badge/Django-5.2.7-green.svg)
 ![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
@@ -24,7 +26,6 @@ Sistema web completo de gestión de productos desarrollado con Django 5.2.7, imp
 - [Panel de Administración](#-panel-de-administración)
 - [Requerimientos Cumplidos](#-requerimientos-cumplidos)
 - [Contribución](#-contribución)
-- [Licencia](#-licencia)
 - [Autor](#-autor)
 
 ---
@@ -175,6 +176,8 @@ Django es un framework web de alto nivel escrito en Python que fomenta el desarr
 6. ✅ Ideal para aplicaciones empresariales escalables
 7. ✅ Documentación exhaustiva y comunidad activa
 
+> 📖 **Para un análisis más detallado de las diferencias entre frameworks, consulta:** [FRAMEWORKS_COMPARISON.md](FRAMEWORKS_COMPARISON.md)
+
 ---
 
 ## 🛠️ Tecnologías Utilizadas
@@ -213,8 +216,8 @@ Django es un framework web de alto nivel escrito en Python que fomenta el desarr
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/portafolio_6.git
-cd portafolio_6
+git clone https://github.com/HansSchiess/Evaluacion_portafolio_6.git
+cd Evaluacion_portafolio_6
 ```
 
 ### 2. Crear entorno virtual
@@ -445,7 +448,8 @@ Evaluacion_portafolio_6/
 │
 ├── requirements.txt             # Dependencias del proyecto
 ├── .gitignore                  # Archivos ignorados por Git
-└── README.md                   # Este archivo
+├── README.md                   # Este archivo
+└── FRAMEWORKS_COMPARISON.md    # Comparativa detallada de frameworks
 ```
 
 ---
@@ -602,19 +606,13 @@ Las contribuciones son bienvenidas. Para contribuir:
 
 ---
 
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
----
-
 ## 👤 Autor
 
-**[Tu Nombre]**
+**Hans Schiess**
 
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- LinkedIn: [Tu Perfil](https://linkedin.com/in/tu-perfil)
-- Email: tu-email@ejemplo.com
+- GitHub: [@schiesscl](https://github.com/schiesscl)
+- Proyecto: [Evaluacion_portafolio_6](https://github.com/HansSchiess/Evaluacion_portafolio_6)
+- LinkedIn: [Hans Schiess](https://www.linkedin.com/in/hans-schiess/)
 
 ---
 
@@ -633,13 +631,14 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 - [Django Tutorial](https://www.djangoproject.com/start/)
 - [Bootstrap Documentation](https://getbootstrap.com/docs/)
 - [Python Official Documentation](https://docs.python.org/3/)
+- [Comparativa Detallada de Frameworks](FRAMEWORKS_COMPARISON.md)
 
 ---
 
 ## 🐛 Reporte de Bugs
 
 Si encuentras algún bug, por favor abre un issue en:
-https://github.com/tu-usuario/portafolio_6/issues
+https://github.com/HansSchiess/Evaluacion_portafolio_6/issues
 
 ---
 
@@ -656,21 +655,8 @@ https://github.com/tu-usuario/portafolio_6/issues
 
 ---
 
-## 🔮 Próximas Funcionalidades
-
-- [ ] Sistema de comentarios en productos
-- [ ] Carrito de compras
-- [ ] Sistema de pagos
-- [ ] API REST con Django REST Framework
-- [ ] Notificaciones en tiempo real
-- [ ] Exportación de reportes (PDF, Excel)
-- [ ] Dashboard con estadísticas
-- [ ] Sistema de roles personalizados
-
----
-
 **⭐ Si este proyecto te fue útil, no olvides darle una estrella en GitHub!**
 
 ---
 
-*Desarrollado con ❤️ usando Django y Python*
+*Desarrollado con ❤️ usando Django y Python por [Hans Schiess](https://github.com/HansSchiess)*
